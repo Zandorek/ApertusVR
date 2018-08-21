@@ -1,6 +1,6 @@
 #MIT License
 #
-#Copyright (c) 2018 MTA SZTAKI
+#Copyright (c) 2016 MTA SZTAKI
 #
 #Permission is hereby granted, free of charge, to any person obtaining a copy
 #of this software and associated documentation files (the "Software"), to deal
@@ -20,18 +20,4 @@
 #OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #SOFTWARE.
 
-set (CONFIGS
-	ApeOgreRenderPlugin.json
-	ApeNodeJsPlugin.json
-	ApeX3DLoaderPlugin.json
-	ApeOisUserInputPlugin.json
-	ApeAssimpAssetLoaderPlugin.json
-	ApeSystem.json
-	)
-
-add_custom_target(
-    Configs_htmlOverlayUI ALL
-    SOURCES ${CONFIGS}
-)
-
-set_property (TARGET Configs_htmlOverlayUI PROPERTY FOLDER "Samples/HtmlOverlayUI/Configs")
+add_subdirectory (local_monitor)

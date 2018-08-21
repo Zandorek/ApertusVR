@@ -64,7 +64,7 @@ namespace Ape
 
 		static std::string getConfigFromCmdArgs(int argc, char** argv, std::string configDirPath)
 		{
-			std::string configDirName = "default";
+			std::string configDirName = "local_monitor";
 			if (argc > 2)
 			{
 				if (std::string(argv[1]) == "-c")
@@ -81,13 +81,13 @@ namespace Ape
 				for (auto& dir : dirs.subDirs)
 				{
 					configMap.insert(std::pair<int, std::string>(i, dir));
-					std::cout << "(" << i << ") " << dir << std::endl;
+					std::cout << " (" << i << ") " << dir << std::endl;
 					i++;
 				}
-
+				std::cout << std::endl;
 				while (true)
 				{
-					std::cout << "Selected config (press enter to default): ";
+					std::cout << "Type a number to select a configuration (press enter to default=local_monitor): ";
 					std::string input = "";
 					std::getline(std::cin, input);
 					if (input.length() == 0)
